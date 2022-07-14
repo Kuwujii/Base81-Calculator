@@ -3,8 +3,9 @@ use eframe::egui; //Egui wrapper
 mod constants;
 
 fn main() {
-    let options: eframe::NativeOptions = eframe::NativeOptions {
-        min_window_size: Some(egui::vec2(50.0, 300.0)),
+    let options = eframe::NativeOptions {
+        min_window_size: Some(egui::vec2(300.0, 500.0)),
+        initial_window_size: Some(egui::vec2(400.0, 600.0)),
         ..Default::default()
     };
 
@@ -29,6 +30,8 @@ impl Default for B81C {
 
 impl eframe::App for B81C { //The actual window
     fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
-
+        egui::CentralPanel::default().show(ctx, |ui| {
+            ui.heading("");
+        });
     }
 }
